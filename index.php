@@ -10,7 +10,7 @@
 <body>
   <img id="logo" src="logo.png" alt="logo pokedex" />
 
-  <form action="server.php" method="post">
+  <form action="find.php" method="post">
     <input type="text" name="search" id="searchbar" />
     <input type="submit" value="Afficher les pokemons trouvés">
   </form>
