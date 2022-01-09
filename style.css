@@ -1,0 +1,56 @@
+#logo {
+    display: block;
+    width: 400px;
+    margin: 100px auto 10px;
+}
+
+#searchbar {
+  display: block;
+  padding: 10px;
+  width: 500px;
+  border: 2px solid #263F90;
+  border-radius: 30px;
+  height: 30px;
+  margin: 0 auto;
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+
+
+#searchlist {
+  width: 480px;
+  margin: 0px auto;
+  /* display: none; */
+}
+
+#searchlist ul {
+  border: 1px solid #263F90;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 15px;
+}
+
+#searchlist ul li {
+  width: 100%;
+  list-style-type: none;
+  border-bottom: 1px solid #263F90;
+}
+#searchlist ul li:last-child {
+  border: none;
+} 
+
+#searchlist ul li:hover {
+  background-color: aliceblue;
+}
+
+#searchlist ul li a {
+  font-size: 2em;
+  vertical-align: middle;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #263F90;
+}
+
+#searchlist ul li img {
+  vertical-align: middle;
+}

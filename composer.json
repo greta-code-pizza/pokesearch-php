@@ -1,0 +1,10 @@
+{
+    "name": "nicolaslechenic/pokesearch-php",
+    "authors": [
+        {
+            "name": "Nicolas LE CHENIC",
+            "email": "nicolaslechenic@gmail.com"
+        }
+    ],
+    "require": {}
+}
