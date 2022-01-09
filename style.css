@@ -16,11 +16,22 @@
   padding-left: 10px;
 }
 
+input[type=submit] {
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  background-color: #263F90;
+  color: #FFF;
+  margin-top: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
 #searchlist {
   width: 480px;
   margin: 0px auto;
-  /* display: none; */
 }
 
 #searchlist ul {
