@@ -35,31 +35,33 @@ input[type=submit] {
 }
 
 #searchlist ul {
-  border: 1px solid #263F90;
+  border: 1px solid #FFF;
   padding: 0px;
   margin: 0px;
-  border-radius: 15px;
 }
 
 #searchlist ul li {
   width: 100%;
   list-style-type: none;
-  border-bottom: 1px solid #263F90;
+  border-bottom: 1px solid #FFF;
 }
+#searchlist ul li.alive {
+  background-color: rgb(7, 143, 125);
+}
+#searchlist ul li.dead {
+  background-color: rgb(179, 4, 19);
+}
+
 #searchlist ul li:last-child {
   border: none;
 } 
 
-#searchlist ul li:hover {
-  background-color: aliceblue;
-}
-
 #searchlist ul li a {
-  font-size: 2em;
+  font-size: 1.2em;
   vertical-align: middle;
   font-family: sans-serif;
   text-decoration: none;
-  color: #263F90;
+  color: #FFF;
 }
 
 #searchlist ul li img {

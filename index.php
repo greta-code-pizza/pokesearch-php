@@ -15,20 +15,27 @@
     <input type="submit" value="Afficher les pokemons trouvés">
   </form>
 
-  <?php
-    if(isset($pokemons)) {
-  ?>
+  <?php if(isset($pokemons)) { ?>
       <div id="searchlist" >
-      <?php
-        foreach($pokemons as $pokemon) {
-      ?>
         <ul id='ulSearchlist'>
-          <li>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $pokemon["id"]; ?>.png" />
-            <a href=""><?= $pokemon["name"]; ?></a>
-          </li>  
+          <?php foreach($pokemons as $pokemon) { ?>
+            <li class=<?= $pokemon->isAlive() ? "alive" : "dead"; ?>>
+              <img src=<?= $pokemon->image(); ?> />
+              <a href="#"><?= $pokemon->about(); ?></a>
+
+              <?php if($pokemon->isAlive() && $pokemon->isHealable()) { ?>
+                <br/>
+                <a href="./action.php?id=<?= $pokemon->id ?>&action=heal">Soigner !</a>
+              <?php }; ?>
+
+              <?php if($pokemon->isAlive()) { ?>
+                <br/>
+                <a class="btn-box" href="./action.php?id=<?= $pokemon->id ?>&action=sufferDamage">Cogner !</a>
+              <?php }; ?>
+
+            </li>  
+          <?php }; ?>
         </ul>
-      <?php }; ?>
     </div>
   <?php }; ?>
 </body>
