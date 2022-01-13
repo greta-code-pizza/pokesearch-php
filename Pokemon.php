@@ -3,6 +3,23 @@
 class Pokemon {
     private const MAX_HP = 100;
 
+    // Méthode de classe qui concerne les pokémons et pas un pokémon
+    public static function find(array $pokemons, string $search):array {
+      $res = [];
+      $length = strlen($search);
+
+      foreach($pokemons as $pokemon) {
+        if(substr($pokemon->name, 0, $length) === $search) {
+          // Ajoute à $res le pokemon courant
+          array_push($res, $pokemon);
+        }
+      }
+
+      return $res;
+    }
+
+    // ------ 
+
     public int $id;
     public string $name;
     private string $type;

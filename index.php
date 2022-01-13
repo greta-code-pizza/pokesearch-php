@@ -15,27 +15,30 @@
     <input type="submit" value="Afficher les pokemons trouvés">
   </form>
 
+  <?php if(isset($team)) { ?>
+    <?= $team->infos(); ?>
+  <?php }; ?>
+
   <?php if(isset($pokemons)) { ?>
-      <div id="searchlist" >
-        <ul id='ulSearchlist'>
-          <?php foreach($pokemons as $pokemon) { ?>
-            <li class=<?= $pokemon->isAlive() ? "alive" : "dead"; ?>>
-              <img src=<?= $pokemon->image(); ?> />
-              <a href="#"><?= $pokemon->about(); ?></a>
+    <div id="searchlist" >
+      <ul id='ulSearchlist'>
+        <?php foreach($pokemons as $pokemon) { ?>
+          <li class=<?= $pokemon->isAlive() ? "alive" : "dead"; ?>>
+            <img src=<?= $pokemon->image(); ?> />
+            <a href="#"><?= $pokemon->about(); ?></a>
 
-              <?php if($pokemon->isAlive() && $pokemon->isHealable()) { ?>
-                <br/>
-                <a href="./action.php?id=<?= $pokemon->id ?>&action=heal">Soigner !</a>
-              <?php }; ?>
+            <?php if($pokemon->isAlive() && $pokemon->isHealable()) { ?>
+              <br/>
+              <a href="./action.php?id=<?= $pokemon->id ?>&action=heal">Soigner !</a>
+            <?php }; ?>
 
-              <?php if($pokemon->isAlive()) { ?>
-                <br/>
-                <a class="btn-box" href="./action.php?id=<?= $pokemon->id ?>&action=sufferDamage">Cogner !</a>
-              <?php }; ?>
-
-            </li>  
-          <?php }; ?>
-        </ul>
+            <?php if($pokemon->isAlive()) { ?>
+              <br/>
+              <a class="btn-box" href="./action.php?id=<?= $pokemon->id ?>&action=sufferDamage">Cogner !</a>
+            <?php }; ?>
+          </li>  
+        <?php }; ?>
+      </ul>
     </div>
   <?php }; ?>
 </body>

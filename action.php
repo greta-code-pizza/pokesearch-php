@@ -6,9 +6,11 @@ session_start();
 $id = $_GET["id"];
 $action = $_GET["action"];
 
-foreach($_SESSION["all"] as $pokemon) {
-  if($pokemon->id == $id) {
-    $pokemon->$action();
+if(isset($_SESSION["all"])) {
+  foreach($_SESSION["all"] as $pokemon) {
+    if($pokemon->id == $id) {
+      $pokemon->$action();
+    }
   }
 }
 
